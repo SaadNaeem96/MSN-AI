@@ -1,0 +1,208 @@
+---
+---
+
+<header class="header">
+  <div class="container">
+    <nav class="nav">
+      <a href="/" class="logo">
+        <span class="logo-text">MSN</span>
+        <span class="logo-accent">AI</span>
+      </a>
+
+      <button class="mobile-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span class="hamburger"></span>
+      </button>
+
+      <ul class="nav-links">
+        <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#contact" class="btn btn-primary btn-nav">Get Started</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--color-border-light);
+    transition: all var(--transition-base);
+  }
+
+  .header.scrolled {
+    box-shadow: var(--shadow-md);
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 4rem;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 800;
+    text-decoration: none;
+  }
+
+  .logo-text {
+    color: var(--color-text);
+  }
+
+  .logo-accent {
+    color: var(--color-primary);
+  }
+
+  .nav-links {
+    display: none;
+    list-style: none;
+    gap: var(--space-xl);
+    align-items: center;
+  }
+
+  .nav-links a {
+    color: var(--color-text);
+    font-weight: 500;
+    text-decoration: none;
+    transition: color var(--transition-fast);
+  }
+
+  .nav-links a:hover {
+    color: var(--color-primary);
+  }
+
+  .btn-nav {
+    padding: 0.625rem 1.25rem;
+    font-size: 0.875rem;
+  }
+
+  .mobile-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }
+
+  .hamburger {
+    position: relative;
+    width: 1.5rem;
+    height: 2px;
+    background: var(--color-text);
+    transition: all var(--transition-fast);
+  }
+
+  .hamburger::before,
+  .hamburger::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--color-text);
+    transition: all var(--transition-fast);
+  }
+
+  .hamburger::before {
+    top: -6px;
+  }
+
+  .hamburger::after {
+    bottom: -6px;
+  }
+
+  .mobile-toggle[aria-expanded="true"] .hamburger {
+    background: transparent;
+  }
+
+  .mobile-toggle[aria-expanded="true"] .hamburger::before {
+    top: 0;
+    transform: rotate(45deg);
+  }
+
+  .mobile-toggle[aria-expanded="true"] .hamburger::after {
+    bottom: 0;
+    transform: rotate(-45deg);
+  }
+
+  @media (min-width: 768px) {
+    .nav {
+      height: 5rem;
+    }
+
+    .nav-links {
+      display: flex;
+    }
+
+    .mobile-toggle {
+      display: none;
+    }
+  }
+
+  /* Mobile menu styles */
+  @media (max-width: 767px) {
+    .nav-links {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      flex-direction: column;
+      background: white;
+      padding: var(--space-lg);
+      box-shadow: var(--shadow-lg);
+      gap: var(--space-md);
+      border-top: 1px solid var(--color-border-light);
+    }
+
+    .nav-links.active {
+      display: flex;
+    }
+
+    .nav-links a {
+      padding: var(--space-sm) 0;
+    }
+
+    .btn-nav {
+      width: 100%;
+      text-align: center;
+      margin-top: var(--space-sm);
+    }
+  }
+</style>
+
+<script>
+  const mobileToggle = document.querySelector('.mobile-toggle');
+  const navLinks = document.querySelector('.nav-links');
+  const header = document.querySelector('.header');
+
+  mobileToggle?.addEventListener('click', () => {
+    const isExpanded = mobileToggle.getAttribute('aria-expanded') === 'true';
+    mobileToggle.setAttribute('aria-expanded', (!isExpanded).toString());
+    navLinks?.classList.toggle('active');
+  });
+
+  // Add scrolled class on scroll
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      header?.classList.add('scrolled');
+    } else {
+      header?.classList.remove('scrolled');
+    }
+  });
+</script>

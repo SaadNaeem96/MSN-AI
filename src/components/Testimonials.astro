@@ -1,0 +1,264 @@
+---
+---
+
+<section class="testimonials">
+  <div class="container">
+    <div class="section-header">
+      <span class="badge">What Owners Say</span>
+      <h2>Trusted by Toronto Restaurants</h2>
+      <p>
+        Real results from real restaurant owners in the GTA.
+      </p>
+    </div>
+
+    <div class="testimonials-grid">
+      <div class="testimonial-card featured">
+        <div class="testimonial-content">
+          <div class="quote-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+            </svg>
+          </div>
+          <blockquote>
+            "We were losing 15-20 calls every Friday and Saturday night. Now? Zero missed.
+            MSN AI paid for itself in the first week."
+          </blockquote>
+          <div class="testimonial-author">
+            <div class="author-avatar">
+              <span>MR</span>
+            </div>
+            <div class="author-info">
+              <strong>Coming Soon</strong>
+              <span>Restaurant Name, Toronto</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-stats">
+          <div class="stat">
+            <span class="stat-value">100%</span>
+            <span class="stat-label">Calls Answered</span>
+          </div>
+          <div class="stat">
+            <span class="stat-value">+$4,200</span>
+            <span class="stat-label">Monthly Revenue</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-content">
+          <blockquote>
+            "My staff used to dread Friday nights because the phone wouldn't stop ringing.
+            Now they can actually focus on the guests in front of them."
+          </blockquote>
+          <div class="testimonial-author">
+            <div class="author-avatar">
+              <span>SK</span>
+            </div>
+            <div class="author-info">
+              <strong>Coming Soon</strong>
+              <span>Restaurant Name, North York</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-content">
+          <blockquote>
+            "The setup was painless. I was skeptical about 'AI' but it actually sounds natural.
+            Customers have no idea they're not talking to staff."
+          </blockquote>
+          <div class="testimonial-author">
+            <div class="author-avatar">
+              <span>JL</span>
+            </div>
+            <div class="author-info">
+              <strong>Coming Soon</strong>
+              <span>Restaurant Name, Scarborough</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial-cta">
+      <p>Want to be our next success story?</p>
+      <a href="#contact" class="btn btn-primary">Get Started Today</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .testimonials {
+    background: white;
+  }
+
+  .section-header {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto var(--space-3xl);
+  }
+
+  .badge {
+    display: inline-block;
+    padding: var(--space-xs) var(--space-md);
+    background: var(--color-accent);
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-radius: var(--radius-full);
+    margin-bottom: var(--space-md);
+  }
+
+  .section-header h2 {
+    margin-bottom: var(--space-md);
+  }
+
+  .section-header p {
+    font-size: 1.125rem;
+    color: var(--color-text-light);
+    margin: 0;
+  }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+    margin-bottom: var(--space-3xl);
+  }
+
+  .testimonial-card {
+    background: var(--color-bg-alt);
+    border-radius: var(--radius-xl);
+    padding: var(--space-xl);
+    transition: all var(--transition-base);
+  }
+
+  .testimonial-card:hover {
+    box-shadow: var(--shadow-lg);
+  }
+
+  .testimonial-card.featured {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+    color: white;
+  }
+
+  .quote-icon {
+    color: rgba(255, 255, 255, 0.3);
+    margin-bottom: var(--space-md);
+  }
+
+  blockquote {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    margin: 0 0 var(--space-xl);
+    font-style: italic;
+  }
+
+  .featured blockquote {
+    font-size: 1.25rem;
+    color: white;
+  }
+
+  .testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+  }
+
+  .author-avatar {
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: var(--radius-full);
+    font-weight: 700;
+    font-size: 0.875rem;
+  }
+
+  .testimonial-card:not(.featured) .author-avatar {
+    background: var(--color-primary);
+    color: white;
+  }
+
+  .author-info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .author-info strong {
+    font-size: 0.9375rem;
+  }
+
+  .author-info span {
+    font-size: 0.8125rem;
+    opacity: 0.8;
+  }
+
+  .featured .author-info span {
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .testimonial-stats {
+    display: flex;
+    gap: var(--space-xl);
+    margin-top: var(--space-xl);
+    padding-top: var(--space-xl);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .stat {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .stat-value {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 800;
+  }
+
+  .stat-label {
+    font-size: 0.8125rem;
+    opacity: 0.8;
+  }
+
+  .testimonial-cta {
+    text-align: center;
+    padding: var(--space-xl);
+    background: var(--color-bg-alt);
+    border-radius: var(--radius-xl);
+  }
+
+  .testimonial-cta p {
+    font-size: 1.125rem;
+    margin-bottom: var(--space-md);
+    color: var(--color-text);
+  }
+
+  @media (min-width: 768px) {
+    .testimonials-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .testimonial-card.featured {
+      grid-column: span 2;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .testimonials-grid {
+      grid-template-columns: 2fr 1fr 1fr;
+    }
+
+    .testimonial-card.featured {
+      grid-column: span 1;
+      grid-row: span 2;
+    }
+  }
+</style>

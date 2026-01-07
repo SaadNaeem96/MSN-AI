@@ -1,0 +1,23 @@
+{
+  "name": "msn-ai-website",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "MSN AI - Virtual AI Host for Toronto Restaurants",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^4.16.0",
+    "@astrojs/netlify": "^5.5.0"
+  },
+  "keywords": [
+    "Toronto restaurant virtual host",
+    "Restaurant call automation Toronto",
+    "AI reservation assistant GTA",
+    "Never miss a call restaurant"
+  ]
+}
