@@ -9,15 +9,10 @@
         <span class="logo-accent">AI</span>
       </a>
 
-      <button class="mobile-toggle" aria-label="Toggle menu" aria-expanded="false">
-        <span class="hamburger"></span>
-      </button>
-
       <ul class="nav-links">
         <li><a href="#how-it-works">How It Works</a></li>
-        <li><a href="#features">Features</a></li>
-        <li><a href="#pricing">Pricing</a></li>
-        <li><a href="#contact" class="btn btn-primary btn-nav">Get Started</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact" class="btn btn-primary btn-nav">Book a Demo</a></li>
       </ul>
     </nav>
   </div>
@@ -30,14 +25,14 @@
     left: 0;
     right: 0;
     z-index: 1000;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--color-border-light);
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     transition: all var(--transition-base);
   }
 
   .header.scrolled {
-    box-shadow: var(--shadow-md);
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.05);
   }
 
   .nav {
@@ -51,9 +46,10 @@
     display: flex;
     align-items: center;
     font-family: var(--font-display);
-    font-size: 1.5rem;
-    font-weight: 800;
+    font-size: 1.25rem;
+    font-weight: 700;
     text-decoration: none;
+    letter-spacing: -0.02em;
   }
 
   .logo-text {
@@ -61,143 +57,44 @@
   }
 
   .logo-accent {
-    color: var(--color-primary);
+    color: var(--color-secondary);
   }
 
   .nav-links {
-    display: none;
+    display: flex;
     list-style: none;
     gap: var(--space-xl);
     align-items: center;
   }
 
   .nav-links a {
-    color: var(--color-text);
+    color: var(--color-text-light);
+    font-size: 0.9375rem;
     font-weight: 500;
     text-decoration: none;
     transition: color var(--transition-fast);
   }
 
   .nav-links a:hover {
-    color: var(--color-primary);
+    color: var(--color-text);
   }
 
   .btn-nav {
-    padding: 0.625rem 1.25rem;
+    padding: 0.5rem 1rem;
     font-size: 0.875rem;
-  }
-
-  .mobile-toggle {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 2.5rem;
-    height: 2.5rem;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-  }
-
-  .hamburger {
-    position: relative;
-    width: 1.5rem;
-    height: 2px;
-    background: var(--color-text);
-    transition: all var(--transition-fast);
-  }
-
-  .hamburger::before,
-  .hamburger::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: var(--color-text);
-    transition: all var(--transition-fast);
-  }
-
-  .hamburger::before {
-    top: -6px;
-  }
-
-  .hamburger::after {
-    bottom: -6px;
-  }
-
-  .mobile-toggle[aria-expanded="true"] .hamburger {
-    background: transparent;
-  }
-
-  .mobile-toggle[aria-expanded="true"] .hamburger::before {
-    top: 0;
-    transform: rotate(45deg);
-  }
-
-  .mobile-toggle[aria-expanded="true"] .hamburger::after {
-    bottom: 0;
-    transform: rotate(-45deg);
+    color: white !important;
   }
 
   @media (min-width: 768px) {
     .nav {
       height: 5rem;
     }
-
-    .nav-links {
-      display: flex;
-    }
-
-    .mobile-toggle {
-      display: none;
-    }
-  }
-
-  /* Mobile menu styles */
-  @media (max-width: 767px) {
-    .nav-links {
-      position: absolute;
-      top: 100%;
-      left: 0;
-      right: 0;
-      flex-direction: column;
-      background: white;
-      padding: var(--space-lg);
-      box-shadow: var(--shadow-lg);
-      gap: var(--space-md);
-      border-top: 1px solid var(--color-border-light);
-    }
-
-    .nav-links.active {
-      display: flex;
-    }
-
-    .nav-links a {
-      padding: var(--space-sm) 0;
-    }
-
-    .btn-nav {
-      width: 100%;
-      text-align: center;
-      margin-top: var(--space-sm);
-    }
   }
 </style>
 
 <script>
-  const mobileToggle = document.querySelector('.mobile-toggle');
-  const navLinks = document.querySelector('.nav-links');
   const header = document.querySelector('.header');
 
-  mobileToggle?.addEventListener('click', () => {
-    const isExpanded = mobileToggle.getAttribute('aria-expanded') === 'true';
-    mobileToggle.setAttribute('aria-expanded', (!isExpanded).toString());
-    navLinks?.classList.toggle('active');
-  });
-
-  // Add scrolled class on scroll
   window.addEventListener('scroll', () => {
     if (window.scrollY > 50) {
       header?.classList.add('scrolled');
