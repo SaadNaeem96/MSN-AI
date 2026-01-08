@@ -27,8 +27,8 @@
       <div class="stat-card" data-answer="Peak hours">
         <div class="stat-question">When do you miss the most?</div>
         <div class="stat-reveal">
-          <span class="stat-number">Peak hours</span>
-          <span class="stat-label">when it matters most</span>
+          <span class="stat-number">6-9 PM</span>
+          <span class="stat-label">peak dinner rush</span>
         </div>
       </div>
     </div>
@@ -89,6 +89,18 @@
   .stat-card:hover .stat-question {
     opacity: 0;
     transform: translateY(-10px);
+  }
+
+  .stat-card:hover {
+    background: white;
+  }
+
+  .stat-question {
+    transition: all var(--transition-base);
+  }
+
+  .stat-card:hover .stat-question {
+    color: var(--color-text-muted);
   }
 
   .stat-reveal {
