@@ -3,73 +3,49 @@
 
 <section class="contact" id="contact">
   <div class="container">
-    <div class="contact-grid">
-      <div class="contact-content">
-        <h2>Let's talk</h2>
-        <p>
-          Book a quick call and we'll prepare a live demo tailored to your restaurant.
-        </p>
+    <div class="contact-content">
+      <h2>Book your free demo</h2>
+      <p>Pick a time that works. We'll show you exactly how it works for your restaurant.</p>
 
-        <div class="contact-features">
-          <div class="contact-feature">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-              <polyline points="22 4 12 14.01 9 11.01"/>
+      <div class="booking-options">
+        <a href="https://cal.com/saad-naeem-nfzdzq/20min" target="_blank" rel="noopener" class="booking-card">
+          <div class="booking-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12 6 12 12 16 14"/>
             </svg>
-            <span>15-minute call</span>
           </div>
-          <div class="contact-feature">
+          <div class="booking-info">
+            <h3>Quick Demo</h3>
+            <p>20 minutes</p>
+          </div>
+          <div class="booking-arrow">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-              <polyline points="22 4 12 14.01 9 11.01"/>
+              <path d="M5 12h14M12 5l7 7-7 7"/>
             </svg>
-            <span>Live demo within hours</span>
           </div>
-          <div class="contact-feature">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-              <polyline points="22 4 12 14.01 9 11.01"/>
-            </svg>
-            <span>No commitment</span>
-          </div>
-        </div>
+        </a>
 
-        <div class="contact-method">
-          <a href="mailto:hello@msnai.ca" class="email-link">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-              <polyline points="22,6 12,13 2,6"/>
+        <a href="https://cal.com/saad-naeem-nfzdzq/45min" target="_blank" rel="noopener" class="booking-card">
+          <div class="booking-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
             </svg>
-            hello@msnai.ca
-          </a>
-        </div>
+          </div>
+          <div class="booking-info">
+            <h3>Detailed Discussion</h3>
+            <p>45 minutes</p>
+          </div>
+          <div class="booking-arrow">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </div>
+        </a>
       </div>
 
-      <div class="contact-form-wrapper">
-        <div class="form-card">
-          <h3>Book your demo</h3>
-          <form class="contact-form" id="contact-form">
-            <div class="form-group">
-              <label for="name">Your name</label>
-              <input type="text" id="name" name="name" required placeholder="John Smith" />
-            </div>
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" required placeholder="john@restaurant.com" />
-            </div>
-            <div class="form-group">
-              <label for="website">Restaurant website or menu link</label>
-              <input type="url" id="website" name="website" placeholder="https://yourrestaurant.com" />
-            </div>
-            <button type="submit" class="btn btn-primary btn-full">
-              Book a Call
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M5 12h14M12 5l7 7-7 7"/>
-              </svg>
-            </button>
-          </form>
-          <p class="form-note">We'll send you a Google Meet link within a few hours.</p>
-        </div>
+      <div class="contact-note">
+        <p>Or email us at <a href="mailto:msnai.host@gmail.com">msnai.host@gmail.com</a></p>
       </div>
     </div>
   </div>
@@ -78,16 +54,13 @@
 <style>
   .contact {
     padding: var(--space-4xl) 0;
-    background: var(--color-bg-alt);
+    background: linear-gradient(180deg, var(--color-bg) 0%, var(--color-bg-alt) 100%);
   }
 
-  .contact-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--space-3xl);
-    align-items: center;
-    max-width: 1000px;
+  .contact-content {
+    max-width: 600px;
     margin: 0 auto;
+    text-align: center;
   }
 
   .contact-content h2 {
@@ -97,135 +70,120 @@
   .contact-content > p {
     color: var(--color-text-light);
     font-size: 1.125rem;
-    margin-bottom: var(--space-xl);
+    margin-bottom: var(--space-2xl);
   }
 
-  .contact-features {
+  .booking-options {
     display: flex;
     flex-direction: column;
-    gap: var(--space-sm);
-    margin-bottom: var(--space-xl);
+    gap: var(--space-md);
+    margin-bottom: var(--space-2xl);
   }
 
-  .contact-feature {
+  .booking-card {
     display: flex;
     align-items: center;
-    gap: var(--space-sm);
-    color: var(--color-text-light);
-    font-size: 0.9375rem;
+    gap: var(--space-lg);
+    padding: var(--space-lg) var(--space-xl);
+    background: white;
+    border-radius: var(--radius-xl);
+    text-decoration: none;
+    color: var(--color-text);
+    transition: all var(--transition-base);
+    border: 2px solid transparent;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
   }
 
-  .contact-feature svg {
-    color: var(--color-success);
+  .booking-card:hover {
+    border-color: var(--color-secondary);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(99, 102, 241, 0.15);
+  }
+
+  .booking-card:hover .booking-icon {
+    background: var(--color-secondary);
+    color: white;
+  }
+
+  .booking-card:hover .booking-arrow {
+    transform: translateX(4px);
+    color: var(--color-secondary);
+  }
+
+  .booking-icon {
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(99, 102, 241, 0.1);
+    border-radius: var(--radius-lg);
+    color: var(--color-secondary);
+    transition: all var(--transition-base);
     flex-shrink: 0;
   }
 
-  .contact-method {
+  .booking-info {
+    flex: 1;
+    text-align: left;
+  }
+
+  .booking-info h3 {
+    font-size: 1.125rem;
+    margin-bottom: 0.125rem;
+  }
+
+  .booking-info p {
+    color: var(--color-text-light);
+    font-size: 0.9375rem;
+    margin: 0;
+  }
+
+  .booking-arrow {
+    color: var(--color-text-muted);
+    transition: all var(--transition-base);
+    flex-shrink: 0;
+  }
+
+  .contact-note {
     padding-top: var(--space-lg);
     border-top: 1px solid var(--color-border);
   }
 
-  .email-link {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--space-sm);
-    color: var(--color-text);
-    font-weight: 500;
+  .contact-note p {
+    color: var(--color-text-muted);
+    font-size: 0.9375rem;
+    margin: 0;
+  }
+
+  .contact-note a {
+    color: var(--color-secondary);
     text-decoration: none;
-    transition: color var(--transition-fast);
-  }
-
-  .email-link:hover {
-    color: var(--color-secondary);
-  }
-
-  .email-link svg {
-    color: var(--color-secondary);
-  }
-
-  .form-card {
-    background: white;
-    border-radius: var(--radius-xl);
-    padding: var(--space-2xl);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-  }
-
-  .form-card h3 {
-    margin-bottom: var(--space-xl);
-    font-size: 1.25rem;
-  }
-
-  .contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-lg);
-  }
-
-  .form-group {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-xs);
-  }
-
-  .form-group label {
-    font-size: 0.875rem;
     font-weight: 500;
-    color: var(--color-text);
   }
 
-  .form-group input {
-    padding: 0.875rem 1rem;
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-md);
-    font-size: 1rem;
-    font-family: inherit;
-    transition: all var(--transition-fast);
+  .contact-note a:hover {
+    text-decoration: underline;
   }
 
-  .form-group input:focus {
-    outline: none;
-    border-color: var(--color-secondary);
-    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
-  }
+  @media (min-width: 640px) {
+    .booking-options {
+      flex-direction: row;
+    }
 
-  .form-group input::placeholder {
-    color: var(--color-text-muted);
-  }
+    .booking-card {
+      flex: 1;
+      flex-direction: column;
+      text-align: center;
+      padding: var(--space-xl);
+    }
 
-  .btn-full {
-    width: 100%;
-    justify-content: center;
-    margin-top: var(--space-sm);
-  }
+    .booking-info {
+      text-align: center;
+    }
 
-  .form-note {
-    text-align: center;
-    font-size: 0.8125rem;
-    color: var(--color-text-muted);
-    margin-top: var(--space-lg);
-    margin-bottom: 0;
-  }
-
-  @media (min-width: 768px) {
-    .contact-grid {
-      grid-template-columns: 1fr 1fr;
+    .booking-arrow {
+      display: none;
     }
   }
 </style>
-
-<script>
-  const form = document.getElementById('contact-form');
-  form?.addEventListener('submit', (e) => {
-    e.preventDefault();
-    // TODO: Connect to your form handling service (Formspree, Netlify Forms, etc.)
-    // For now, redirect to email
-    const name = (document.getElementById('name') as HTMLInputElement)?.value;
-    const email = (document.getElementById('email') as HTMLInputElement)?.value;
-    const website = (document.getElementById('website') as HTMLInputElement)?.value;
-
-    const subject = encodeURIComponent('Demo Request from ' + name);
-    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nWebsite: ${website || 'Not provided'}`);
-
-    window.location.href = `mailto:hello@msnai.ca?subject=${subject}&body=${body}`;
-  });
-</script>

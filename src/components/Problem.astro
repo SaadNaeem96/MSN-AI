@@ -4,28 +4,36 @@
 <section class="problem" id="problem">
   <div class="container">
     <div class="problem-content">
-      <h2>While you're serving guests,<br /><span class="text-gradient">your phone keeps ringing.</span></h2>
-      <p class="problem-text">
-        Every unanswered call is a reservation that went somewhere else.
-      </p>
+      <h2>Every missed call is a table<br /><span class="text-gradient">that went somewhere else.</span></h2>
     </div>
 
     <div class="stats-row">
-      <div class="stat-item">
-        <span class="stat-number">70%</span>
-        <span class="stat-label">of callers won't try again</span>
+      <div class="stat-card" data-answer="70%">
+        <div class="stat-question">What % of callers won't try again?</div>
+        <div class="stat-reveal">
+          <span class="stat-number">70%</span>
+          <span class="stat-label">gone forever</span>
+        </div>
       </div>
-      <div class="stat-divider"></div>
-      <div class="stat-item">
-        <span class="stat-number">$4K+</span>
-        <span class="stat-label">lost monthly from missed calls</span>
+
+      <div class="stat-card" data-answer="$4,000+">
+        <div class="stat-question">Monthly revenue lost to missed calls?</div>
+        <div class="stat-reveal">
+          <span class="stat-number">$4,000+</span>
+          <span class="stat-label">every month</span>
+        </div>
       </div>
-      <div class="stat-divider"></div>
-      <div class="stat-item">
-        <span class="stat-number">Peak hours</span>
-        <span class="stat-label">are when you miss the most</span>
+
+      <div class="stat-card" data-answer="Peak hours">
+        <div class="stat-question">When do you miss the most?</div>
+        <div class="stat-reveal">
+          <span class="stat-number">Peak hours</span>
+          <span class="stat-label">when it matters most</span>
+        </div>
       </div>
     </div>
+
+    <p class="problem-hint">Hover to reveal</p>
   </div>
 </section>
 
@@ -42,36 +50,66 @@
   }
 
   .problem-content h2 {
-    margin-bottom: var(--space-lg);
     font-size: clamp(1.75rem, 4vw, 2.5rem);
   }
 
-  .problem-text {
-    font-size: 1.125rem;
-    color: var(--color-text-light);
-    margin: 0;
-  }
-
   .stats-row {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-xl);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
     max-width: 900px;
     margin: 0 auto;
-    padding: var(--space-2xl);
-    background: var(--color-bg-alt);
-    border-radius: var(--radius-xl);
   }
 
-  .stat-item {
+  .stat-card {
+    position: relative;
+    background: var(--color-bg-alt);
+    border-radius: var(--radius-xl);
+    padding: var(--space-2xl);
     text-align: center;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all var(--transition-base);
+    border: 2px solid transparent;
+  }
+
+  .stat-card:hover {
+    border-color: var(--color-secondary);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(99, 102, 241, 0.15);
+  }
+
+  .stat-question {
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: var(--color-text);
+    transition: all var(--transition-base);
+  }
+
+  .stat-card:hover .stat-question {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  .stat-reveal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: all var(--transition-base);
+    text-align: center;
+  }
+
+  .stat-card:hover .stat-reveal {
+    opacity: 1;
   }
 
   .stat-number {
     display: block;
     font-family: var(--font-display);
-    font-size: 2rem;
-    font-weight: 700;
+    font-size: 2.5rem;
+    font-weight: 800;
     color: var(--color-secondary);
     margin-bottom: var(--space-xs);
   }
@@ -81,23 +119,21 @@
     color: var(--color-text-light);
   }
 
-  .stat-divider {
-    display: none;
+  .problem-hint {
+    text-align: center;
+    font-size: 0.8125rem;
+    color: var(--color-text-muted);
+    margin-top: var(--space-lg);
+    margin-bottom: 0;
   }
 
   @media (min-width: 768px) {
     .stats-row {
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
-      gap: var(--space-2xl);
+      grid-template-columns: repeat(3, 1fr);
     }
 
-    .stat-divider {
-      display: block;
-      width: 1px;
-      height: 3rem;
-      background: var(--color-border);
+    .stat-card {
+      padding: var(--space-2xl) var(--space-xl);
     }
   }
 </style>
