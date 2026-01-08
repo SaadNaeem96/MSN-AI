@@ -1,0 +1,420 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const industries = [
+  {
+    id: 'restaurants',
+    name: 'Restaurants',
+    tagline: 'Never miss a reservation again',
+    description: 'Handle calls, book tables, answer FAQs—even when the dining room is packed.',
+    icon: 'utensils',
+    features: ['Reservation booking & modification', 'Menu & hours inquiries', 'After-hours call handling', 'Waitlist management'],
+    featured: true
+  },
+  {
+    id: 'hospitality',
+    name: 'Hospitality',
+    tagline: 'Automate STR and hotel operations',
+    description: 'From booking inquiries to check-in instructions, handle guest communications 24/7.',
+    icon: 'hotel',
+    features: ['Booking confirmations', 'Check-in/out instructions', 'Local recommendations', 'Issue escalation']
+  },
+  {
+    id: 'property',
+    name: 'Property Management',
+    tagline: 'From tour booked to lease signed',
+    description: 'Schedule showings, answer tenant questions, and never miss a prospective renter.',
+    icon: 'building',
+    features: ['Tour scheduling', 'Tenant inquiries', 'Maintenance requests', 'Lease information']
+  },
+  {
+    id: 'home-services',
+    name: 'Home Services',
+    tagline: 'AI that answers calls and books services',
+    description: 'Plumbers, electricians, cleaners—capture every job request automatically.',
+    icon: 'wrench',
+    features: ['Service booking', 'Quote requests', 'Availability checks', 'Emergency dispatch']
+  },
+  {
+    id: 'financial',
+    name: 'Financial Services',
+    tagline: 'Never lose a lead again',
+    description: 'Qualify leads, schedule consultations, and answer common questions instantly.',
+    icon: 'chart',
+    features: ['Lead qualification', 'Appointment booking', 'FAQ handling', 'Document requests']
+  },
+  {
+    id: 'ecommerce',
+    name: 'E-Commerce',
+    tagline: '24/7 sales and support assistant',
+    description: 'Order status, returns, product questions—handled without wait times.',
+    icon: 'cart',
+    features: ['Order tracking', 'Return processing', 'Product information', 'Upsell recommendations']
+  },
+  {
+    id: 'software',
+    name: 'Consumer Software',
+    tagline: 'Integrated, secure support for modern apps',
+    description: 'Tier-1 support automation that integrates with your existing tools.',
+    icon: 'code',
+    features: ['Account inquiries', 'Troubleshooting', 'Feature requests', 'Escalation routing']
+  }
+];
+---
+
+<Layout title="Industries | MSN AI - Virtual AI Host for Every Business">
+  <Header />
+  <main id="main-content">
+    <section class="hero">
+      <div class="container">
+        <h1>One platform.<br /><span class="text-gradient">Every industry.</span></h1>
+        <p>The same AI that handles restaurant reservations can book appointments, qualify leads, and support customers—across any business.</p>
+      </div>
+    </section>
+
+    <section class="industries">
+      <div class="container">
+        <div class="industries-grid">
+          {industries.map((industry) => (
+            <div class={`industry-card ${industry.featured ? 'featured' : ''}`} id={industry.id}>
+              <div class="industry-icon">
+                {industry.icon === 'utensils' && (
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/>
+                    <path d="M7 2v20"/>
+                    <path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/>
+                  </svg>
+                )}
+                {industry.icon === 'hotel' && (
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2Z"/>
+                    <path d="M9 22v-4h6v4"/>
+                    <path d="M8 6h.01"/>
+                    <path d="M16 6h.01"/>
+                    <path d="M12 6h.01"/>
+                    <path d="M12 10h.01"/>
+                    <path d="M12 14h.01"/>
+                    <path d="M16 10h.01"/>
+                    <path d="M16 14h.01"/>
+                    <path d="M8 10h.01"/>
+                    <path d="M8 14h.01"/>
+                  </svg>
+                )}
+                {industry.icon === 'building' && (
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="4" y="2" width="16" height="20" rx="2" ry="2"/>
+                    <path d="M9 22v-4h6v4"/>
+                    <path d="M8 6h.01"/>
+                    <path d="M16 6h.01"/>
+                    <path d="M8 10h.01"/>
+                    <path d="M16 10h.01"/>
+                    <path d="M8 14h.01"/>
+                    <path d="M16 14h.01"/>
+                  </svg>
+                )}
+                {industry.icon === 'wrench' && (
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                  </svg>
+                )}
+                {industry.icon === 'chart' && (
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="12" y1="20" x2="12" y2="10"/>
+                    <line x1="18" y1="20" x2="18" y2="4"/>
+                    <line x1="6" y1="20" x2="6" y2="16"/>
+                  </svg>
+                )}
+                {industry.icon === 'cart' && (
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="9" cy="21" r="1"/>
+                    <circle cx="20" cy="21" r="1"/>
+                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+                  </svg>
+                )}
+                {industry.icon === 'code' && (
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="16 18 22 12 16 6"/>
+                    <polyline points="8 6 2 12 8 18"/>
+                  </svg>
+                )}
+              </div>
+
+              {industry.featured && <span class="featured-badge">Primary Focus</span>}
+
+              <h2>{industry.name}</h2>
+              <p class="industry-tagline">{industry.tagline}</p>
+              <p class="industry-description">{industry.description}</p>
+
+              <ul class="industry-features">
+                {industry.features.map((feature) => (
+                  <li>{feature}</li>
+                ))}
+              </ul>
+
+              <a href="/#contact" class="btn btn-secondary">Get Started</a>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container">
+        <h2>Don't see your industry?</h2>
+        <p>If you take calls, we can help. Let's talk about your specific needs.</p>
+        <a href="/#contact" class="btn btn-primary btn-lg">Book a Demo</a>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .hero {
+    padding: 10rem 0 4rem;
+    background: linear-gradient(180deg, var(--color-bg-alt) 0%, var(--color-bg) 100%);
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin-bottom: var(--space-lg);
+  }
+
+  .hero p {
+    font-size: 1.125rem;
+    color: var(--color-text-light);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .industries {
+    padding: var(--space-4xl) 0;
+  }
+
+  .industries-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  .industry-card {
+    position: relative;
+    background: var(--color-bg-alt);
+    border-radius: var(--radius-xl);
+    padding: var(--space-xl);
+    transition: all var(--transition-base);
+    border: 2px solid transparent;
+  }
+
+  .industry-card:hover {
+    border-color: var(--color-secondary);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(99, 102, 241, 0.1);
+  }
+
+  .industry-card.featured {
+    background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
+    color: white;
+    grid-column: 1 / -1;
+  }
+
+  .industry-card.featured:hover {
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+
+  .industry-icon {
+    width: 3.5rem;
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(99, 102, 241, 0.1);
+    border-radius: var(--radius-lg);
+    color: var(--color-secondary);
+    margin-bottom: var(--space-lg);
+    transition: all var(--transition-base);
+  }
+
+  .industry-card:hover .industry-icon {
+    background: var(--color-secondary);
+    color: white;
+  }
+
+  .industry-card.featured .industry-icon {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+  }
+
+  .featured-badge {
+    position: absolute;
+    top: var(--space-lg);
+    right: var(--space-lg);
+    padding: var(--space-xs) var(--space-sm);
+    background: rgba(255, 255, 255, 0.2);
+    font-size: 0.6875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-radius: var(--radius-full);
+  }
+
+  .industry-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: var(--space-xs);
+  }
+
+  .industry-card.featured h2 {
+    color: white;
+  }
+
+  .industry-tagline {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--color-secondary);
+    margin-bottom: var(--space-sm);
+  }
+
+  .industry-card.featured .industry-tagline {
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .industry-description {
+    color: var(--color-text-light);
+    font-size: 0.9375rem;
+    margin-bottom: var(--space-lg);
+  }
+
+  .industry-card.featured .industry-description {
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .industry-features {
+    list-style: none;
+    margin: 0 0 var(--space-lg);
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-xs);
+  }
+
+  .industry-features li {
+    position: relative;
+    padding-left: 1.25rem;
+    font-size: 0.875rem;
+    color: var(--color-text-light);
+  }
+
+  .industry-card.featured .industry-features li {
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .industry-features li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.5rem;
+    width: 6px;
+    height: 6px;
+    background: var(--color-secondary);
+    border-radius: 50%;
+  }
+
+  .industry-card.featured .industry-features li::before {
+    background: rgba(255, 255, 255, 0.6);
+  }
+
+  .industry-card .btn {
+    width: 100%;
+  }
+
+  .industry-card.featured .btn {
+    background: white;
+    color: var(--color-primary);
+    border-color: white;
+  }
+
+  .industry-card.featured .btn:hover {
+    background: rgba(255, 255, 255, 0.9);
+  }
+
+  .cta {
+    padding: var(--space-4xl) 0;
+    background: var(--color-bg-alt);
+    text-align: center;
+  }
+
+  .cta h2 {
+    margin-bottom: var(--space-sm);
+  }
+
+  .cta p {
+    color: var(--color-text-light);
+    font-size: 1.125rem;
+    margin-bottom: var(--space-xl);
+  }
+
+  @media (min-width: 640px) {
+    .industries-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .industry-features {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .industries-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .industry-card.featured {
+      grid-column: span 3;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      grid-template-rows: auto auto 1fr auto;
+      gap: 0 var(--space-xl);
+      align-items: start;
+    }
+
+    .industry-card.featured .industry-icon {
+      grid-row: 1 / 3;
+    }
+
+    .industry-card.featured h2 {
+      grid-column: 2;
+      margin-bottom: 0;
+    }
+
+    .industry-card.featured .industry-tagline {
+      grid-column: 2;
+    }
+
+    .industry-card.featured .industry-description {
+      grid-column: 2;
+      grid-row: 3;
+      margin-bottom: 0;
+    }
+
+    .industry-card.featured .industry-features {
+      grid-column: 3;
+      grid-row: 1 / 4;
+      margin-bottom: 0;
+    }
+
+    .industry-card.featured .btn {
+      grid-column: 2 / 4;
+      width: auto;
+      justify-self: start;
+    }
+
+    .industry-card.featured .featured-badge {
+      grid-column: 3;
+      position: static;
+      justify-self: end;
+    }
+  }
+</style>
