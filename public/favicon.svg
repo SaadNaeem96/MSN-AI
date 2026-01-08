@@ -1,10 +1,32 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
   <defs>
-    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#1a56db;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#1e40af;stop-opacity:1" />
+    <linearGradient id="compassGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="50%" style="stop-color:#14b8a6"/>
+      <stop offset="100%" style="stop-color:#f59e0b"/>
+    </linearGradient>
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#fbbf24"/>
     </linearGradient>
   </defs>
-  <rect width="100" height="100" rx="20" fill="url(#grad)"/>
-  <text x="50" y="68" font-family="Arial, sans-serif" font-size="42" font-weight="bold" fill="white" text-anchor="middle">AI</text>
+
+  <!-- Dark background -->
+  <rect width="100" height="100" rx="16" fill="#0f172a"/>
+
+  <!-- Compass star - 8 points -->
+  <!-- Main 4 points -->
+  <polygon points="50,8 54,42 50,50 46,42" fill="url(#compassGrad)" opacity="0.9"/>
+  <polygon points="50,92 54,58 50,50 46,58" fill="url(#compassGrad)" opacity="0.7"/>
+  <polygon points="8,50 42,46 50,50 42,54" fill="url(#compassGrad)" opacity="0.7"/>
+  <polygon points="92,50 58,46 50,50 58,54" fill="url(#compassGrad)" opacity="0.9"/>
+
+  <!-- Diagonal 4 points -->
+  <polygon points="20,20 44,44 50,50 44,44" fill="url(#compassGrad)" opacity="0.5" transform="rotate(0 50 50)"/>
+  <polygon points="80,20 56,44 50,50" fill="url(#compassGrad)" opacity="0.5"/>
+  <polygon points="20,80 44,56 50,50" fill="url(#compassGrad)" opacity="0.5"/>
+  <polygon points="80,80 56,56 50,50" fill="url(#compassGrad)" opacity="0.5"/>
+
+  <!-- Center circle -->
+  <circle cx="50" cy="50" r="6" fill="#0f172a" stroke="url(#compassGrad)" stroke-width="2"/>
 </svg>

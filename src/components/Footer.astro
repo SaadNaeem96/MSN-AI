@@ -7,8 +7,25 @@ const currentYear = new Date().getFullYear();
     <div class="footer-content">
       <div class="footer-brand">
         <a href="/" class="logo">
-          <span class="logo-text">MSN</span>
-          <span class="logo-accent">AI</span>
+          <svg class="logo-icon" width="28" height="28" viewBox="0 0 100 100">
+            <defs>
+              <linearGradient id="compassGradFooter" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#10b981"/>
+                <stop offset="50%" style="stop-color:#14b8a6"/>
+                <stop offset="100%" style="stop-color:#f59e0b"/>
+              </linearGradient>
+            </defs>
+            <polygon points="50,5 55,40 50,50 45,40" fill="url(#compassGradFooter)"/>
+            <polygon points="50,95 55,60 50,50 45,60" fill="url(#compassGradFooter)" opacity="0.7"/>
+            <polygon points="5,50 40,45 50,50 40,55" fill="url(#compassGradFooter)" opacity="0.7"/>
+            <polygon points="95,50 60,45 50,50 60,55" fill="url(#compassGradFooter)"/>
+            <polygon points="18,18 43,43 50,50" fill="url(#compassGradFooter)" opacity="0.4"/>
+            <polygon points="82,18 57,43 50,50" fill="url(#compassGradFooter)" opacity="0.4"/>
+            <polygon points="18,82 43,57 50,50" fill="url(#compassGradFooter)" opacity="0.4"/>
+            <polygon points="82,82 57,57 50,50" fill="url(#compassGradFooter)" opacity="0.4"/>
+            <circle cx="50" cy="50" r="8" fill="white" opacity="0.9"/>
+          </svg>
+          <span class="logo-text">MSNAI</span>
         </a>
         <p>Never miss another customer.</p>
       </div>
@@ -55,6 +72,7 @@ const currentYear = new Date().getFullYear();
   .logo {
     display: inline-flex;
     align-items: center;
+    gap: 0.5rem;
     font-family: var(--font-display);
     font-size: 1.25rem;
     font-weight: 700;
@@ -62,11 +80,10 @@ const currentYear = new Date().getFullYear();
   }
 
   .logo-text {
-    color: white;
-  }
-
-  .logo-accent {
-    color: var(--color-secondary);
+    background: linear-gradient(135deg, #10b981 0%, #14b8a6 50%, #f59e0b 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
   .footer-brand p {
@@ -91,13 +108,13 @@ const currentYear = new Date().getFullYear();
   }
 
   .footer-contact a {
-    color: var(--color-secondary);
+    color: #10b981;
     text-decoration: none;
     font-size: 0.9375rem;
   }
 
   .footer-contact a:hover {
-    color: var(--color-accent);
+    color: #f59e0b;
   }
 
   .footer-bottom p {
